@@ -42,3 +42,34 @@ const ComponentFunc = (props) => {}
 ```js
 const [value, setValue] = useState('initial');
 ```
+
+## #3 Class Components、Function Componentsについて
+```js
+
+// Class Componentsの場合
+class ClassCompontn extends React.Component {
+  render() {
+    return (
+      <div>クラスです</div>
+    )
+  }
+}
+
+// Function Componentsの場合
+function FunctionComponent {
+  return (
+    <div>ファンクションです</div>
+  )
+}
+```
+
+### プロパティ、ステートは
+```js
+// props
+this.props
+
+// state
+this.state
+
+this.setState({key: value})
+```
