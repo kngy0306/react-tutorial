@@ -42,3 +42,62 @@ const ComponentFunc = (props) => {}
 ```js
 const [value, setValue] = useState('initial');
 ```
+
+## #3 Class Components、Function Componentsについて
+```js
+
+// Class Componentsの場合
+class ClassCompontn extends React.Component {
+  render() {
+    return (
+      <div>クラスです</div>
+    )
+  }
+}
+
+// Function Componentsの場合
+function FunctionComponent {
+  return (
+    <div>ファンクションです</div>
+  )
+}
+```
+
+### プロパティ、ステートは
+```js
+// props
+this.props
+
+// state
+this.state
+
+this.setState({key: value})
+```
+
+## #4
+条件分岐
+```js
+function Test() {
+  return (
+    <div>
+      {tab === 'list' ? <List /> : <Form />}
+    </div>
+  )
+}
+```
+
+繰り返し  
+div要素のkeyは一意である必要がある。
+```js
+function Test() {
+  return (
+    <div>
+      {
+        list.map(val, index) => {
+          return <div key={index}>{val}</div>
+        }
+      }
+    </div>
+  )
+}
+```
