@@ -136,3 +136,30 @@ function Child({parentData}) {
   return <div>{parentData}</div>
 }
 ```
+
+## #6 コンポーネントのライフサイクル
+Mouting → Updating → Unmountingと遷移していく。(クラスコンポーネントの場合)  
+ファンクションコンポーネントの場合、`useEffect`がすべてを担う！？  
+
+`useEffect(関数、配列)`のように入れる。まず最初にサイトを開いたら呼ばれる。（マウント時）  
+その後、第2引数に入れた値が変更した際に呼ばれるようになる。空の配列を指定すると、マウント時のみに呼ばれるようになる。  
+
+`useEffect(関数の返り値)`は、Unmount時に呼ばれる。
+
+### まとめ
+```js
+useEffect(() => {
+  // mounting時に呼ばれる
+}, []);
+
+useEffect(() => {
+  // mouting時、langsの変更時に呼ばれる
+}, [langs]);
+
+useEffect(() => {
+  // mounting時、langsの変更時に呼ばれる
+  return () => {
+    // unmounting時に呼ばれる
+  }
+})
+```
