@@ -101,3 +101,38 @@ function Test() {
   )
 }
 ```
+
+## #5 親子間(コンポーネント)の値の受け渡し
+フォームの利用
+```js
+<form onSubmit={submitFunc}>
+  <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+  <button>ボタン</button>
+</fom>
+```
+
+### 子コンポーネント → 親コンポーネント
+親コンポーネントで関数を定義し、子コンポーネントを呼び出す際に関数を渡す。
+```js
+function Parent() {
+  const testFunc = () => {}
+  return <Child parentFunc={testFunc} />
+}
+
+function Child({parentFunc}) {
+  return <div onClick={() => parentFunc(text)}>テスト</div>
+}
+```
+
+### 親 → 子
+親からプロパティとして値を渡す。
+```js
+function Parent() {
+  const test = "テストデータ";
+  return <Child parentData={test} />
+}
+
+function Child({parentData}) {
+  return <div>{parentData}</div>
+}
+```
