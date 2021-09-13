@@ -163,3 +163,71 @@ useEffect(() => {
   }
 })
 ```
+
+## #7 Reactのスタイル
+#### スタイルを利用する方法は1つに確立されていない
+
+#### Inline CSS
+styleをオブジェクトで表す
+```js
+const divStyle = {
+  color: 'blue',
+  backgroundColor: 'black',
+};
+function TestComponent() {
+  return <div style={divStyle}>Hello World!</div>;
+}
+```
+
+#### CSS Modules
+cssをインポートし、classNameで割り当て
+```js
+import styes from ',/style.css'
+
+function TestComponent() {
+  return <div className={style.test}>Hello World!</div>;
+}
+```
+
+#### styled-components
+cssを加えたタグ要素を定義し、利用する
+```js
+import styled from 'styled-components'
+
+const TestDiv = styled.dev`
+  color: 'blue',
+`
+
+function TestComponent() {
+  return <TestDiv>Hello World!</TestDiv>
+}
+```
+
+```yarn add styled-components```でインストール
+styled-compoentsの基礎
+```js
+import styled from 'styled-components';
+
+const NewComp = styled.div`
+  padding: 8px;
+
+  &:focus {
+    color: red;
+  }
+`
+```
+
+動的なスタイル
+```js
+const NewComp = styled.div`
+  padding: 8px;
+  color: ${props => props.warn ? 'red' : 'black'}
+`
+```
+
+別で定義したコンポーネントを継承
+```js
+const NewButton = styled(Button)`
+  color: red;
+`
+```
