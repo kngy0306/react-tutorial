@@ -231,3 +231,19 @@ const NewButton = styled(Button)`
   color: red;
 `
 ```
+
+## #8 Higher-Order Component 高階コンポーネント
+コンポーネントの引数にコンポーネントを受け取る
+```js
+const withPadding = (Component) => {
+  return (props) => {
+    return (
+      <div style={ { padding: '20px' } }>
+        <Component { ...props }>
+      </div>
+    )
+  }
+}
+
+withPadding(() => <div>テスト</div>)
+```
