@@ -247,3 +247,6 @@ const withPadding = (Component) => {
 
 withPadding(() => <div>テスト</div>)
 ```
+
+## #9 Portalを利用したモーダル
+Portalを利用すると任意の場所にコンポーネントを表示させることができるようになる  
