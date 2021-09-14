@@ -260,3 +260,22 @@ const Test = () => {
   )
 }
 ```
+
+## #10 .refによるエレメントの取得
+HTMLについても理解が必要。  
+- tabindex
+- onblur
+など
+```js
+import { useRef } from 'react';
+
+const Test = () => {
+  const ref = useRef(null);
+
+  return (
+    <div>
+      <div ref={ref}>フォーカスさせたい</div>
+    </div>
+  )
+}
+```
