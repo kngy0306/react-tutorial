@@ -262,6 +262,7 @@ const Test = () => {
 ```
 
 ## #10 .refによるエレメントの取得
+ReactでHTMLのエレメントの要素として取得したいときに使用  
 HTMLについても理解が必要。  
 - tabindex
 - onblur
@@ -281,6 +282,7 @@ const Test = () => {
 ```
 
 ## #11 Contextを利用したテーマの変更
+離れたコンポーネントでも共有できるようになる。以下の例では<App />をContextで囲っているので<App />配下の全部で値を共有できる。  
 Contextの定義
 ```js
 import React from 'react';
