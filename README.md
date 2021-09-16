@@ -279,3 +279,21 @@ const Test = () => {
   )
 }
 ```
+
+## #11 Contextを利用したテーマの変更
+Contextの定義
+```js
+import React from 'react';
+
+export const UserNameContext = React.createContext(['kona', () => []]);
+```
+Contextの利用
+```js
+<UserNameContext.Provider value={[useName, setUserName]}>
+  <App />
+<UserNameContext.Provider>
+```
+
+```js
+const [userName, setUserName] = useContext(UserNameContext)
+```
