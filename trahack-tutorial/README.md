@@ -350,4 +350,45 @@ export const ToggleButton = () => {
 };
 ```
 
-## #8
+## #8 ライフサイクル
+
+- コンポーネントの生成 ~ 破棄まで
+- 3種類のライフサイクル
+  - Mounting 最初にコンポーネントが生まれるとき
+  - Updating コンポーネントが変更されるとき
+  - Unmounting コンポーネントが破棄されるとき
+
+### 副作用(effect)フックを使う
+
+副作用 = レンダリングによって引き起こされる処理。
+
+### 第2引数が大事
+
+- useEffectの第2引数に配列を渡せる
+- 第2引数は`deps`と呼ばれ、依存関係を表す
+
+```js
+// Mount時
+useEffect(() => {
+    console.log(`Counter is ... ${count}`);
+}, []);
+
+// Update時
+useEffect(() => {
+    console.log(`Counter is ... ${count}`);
+}, [count]);
+
+// Unmount時
+useEffect(() => {
+    console.log(`Counter is ... ${count}`);
+    return () => {
+      console.log("this component is dead");
+    }
+});
+```
+
+### クリーンアップを理解する
+
+Unmount時に呼ばれる関数のことをクリーンアップ関数という。
+
+## #9

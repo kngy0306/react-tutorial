@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
@@ -10,11 +10,18 @@ export const Counter = () => {
     setCount((prevState) => prevState - 1);
   };
 
+  useEffect(() => {
+    console.log(`Counter is ... ${count}`);
+    return () => {
+      console.log("this component is dead");
+    };
+  });
+
   return (
     <div>
       <p>現在のカウント: {count}</p>
       <button onClick={countUp}>COUNT UP</button>
-      <button onClick={()=>countDown()}>COUNT DOWN</button>
+      <button onClick={() => countDown()}>COUNT DOWN</button>
     </div>
-  )
+  );
 };

@@ -1,5 +1,5 @@
 import Article from "./components/Article";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "./components/Input";
 import { Counter } from "./components/Counter";
 import { ToggleButton } from "./components/ToggleButton";
