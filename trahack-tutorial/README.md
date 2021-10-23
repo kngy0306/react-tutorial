@@ -165,3 +165,80 @@ export const Article = (props) => {
   );
 }
 ```
+
+## #5 コンポーネントのimport、export
+
+### コンポーネントは分ける
+
+1ファイル = 1コンポーネントにするべき。
+
+- 責務を明確にする
+- 大規模なアプリでも管理しやすくするため
+- 再利用するため
+
+### JSのモジュール機能
+
+プログラムをモジュールという単位に分割する。  
+原則1ファイル = 1モジュール。  
+
+### default export (名前なしexport)
+
+推奨されているexport方法。  
+正しくは、`default`という名前でexportしている。
+
+```js
+// アロー関数のdefault export
+const Title = (props) => {
+  return <h2>{props.title}</p>
+};
+export default Title;
+
+// 名前付きの関数のdefault export
+export default function Title(props) {
+  return <h2>{props.title}</p>
+}
+```
+
+### default import (名前なしimport)
+
+default exportしたモジュールをそのまま読み込む。  
+
+```js
+import Title from './components/Title';
+```
+
+### 名前付きexport
+
+1ファイルから複数モジュールをexportしたいとき。  
+Reactではエントリポイントでよく使用される。  
+
+以下のように、index.jsに各コンポーネントを読み込んで、名前をつけてexportすれば、複数モジュールの読み込み時でも、1行でimportできる。
+
+**ユースケース**  
+componentsフォルダにたくさんのコンポーネントがあるとき、componentsフォルダにindex.jsというエントリポイントになるファイルを1つ作成しておく。そのエントリポイントの中で名前付きexportを行えば、componentsフォルダ内のコンポーネントを呼び出すコンポーネントでは、1行で読み込むことができる。
+
+
+```js
+// index.js
+export {default as Article} from './Article';
+export {default as Content} from './Content';
+export {default as Title} from './Title';
+```
+
+とすれば、読み込むファイルで1行で各モジュールを読み込み可能。  
+**名前付きimportへ**
+
+### 名前付きimportへ
+
+1ファイルから複数モジュールを読み込む。
+
+```js
+import Title from './components/Title';
+import Article from './components/Article';
+import Content from './components/Content';
+
+// ↑を↓で書ける
+
+import {Content, Article, Title} from './components/index';
+```
+
