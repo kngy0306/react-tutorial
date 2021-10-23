@@ -272,5 +272,82 @@ const [state, setState] = useState("初期値");
 <Article onClick={someFunc()}>
 ```
 
-## #7
+## #7 頻出useState
 
+### 引数を使って更新する
+
+- 入力フォームなど
+- onChangeイベントで関数に値を渡す
+
+例↓
+
+```js
+import React, { useState } from "react";
+
+export const Input = () => {
+  const [name, setName] = useState("");
+
+  const handleName = (event) => {
+    console.log(name);
+    setName(event.target.value);
+  };
+
+  return (
+    <input onChange={(event) => handleName(event)} type="text" value={name} />
+  );
+};
+```
+
+### prevStateを活用する
+
+- useStateの更新関数で使える特殊なprevState
+- prevStateは更新前のstate
+
+```js
+import React, { useState } from "react";
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const countUp = () => {
+    setCount((prevState) => prevState + 1);
+  };
+  const countDown = () => {
+    setCount((prevState) => prevState - 1);
+  };
+
+  return (
+    <div>
+      <p>現在のカウント: {count}</p>
+      <button onClick={countUp}>COUNT UP</button>
+      <button onClick={()=>countDown()}>COUNT DOWN</button>
+    </div>
+  )
+};
+```
+
+prevState ではなく、count + 1としてしまうと、useStateは非同期で処理が走るのでバグの温床になる。ダーティーリード的な感じかも
+
+### ON/OFFの切り替え
+
+```js
+import React, { useState } from "react";
+
+export const ToggleButton = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen((prevState)=>{return !prevState});
+  }
+
+  return (
+    <div>
+      <button onClick={()=>toggle()}>
+        {open ? "OPEN" : "CLOSE"}
+      </button>
+    </div>
+  )
+};
+```
+
+## #8
