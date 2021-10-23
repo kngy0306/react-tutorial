@@ -1,5 +1,4 @@
 # react-tutorial
-https://youtube.com/playlist?list=PL0ATFRXu9uECMPBV7GspaLz3KqKILfa13
 
 ## #1 プロジェクトの立ち上げ
 #### プロジェクトの作成と立ち上げ

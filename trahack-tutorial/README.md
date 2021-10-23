@@ -1,7 +1,5 @@
 # trahack-tutorial
 
-[新・日本一わかりやすいReact入門【基礎編】](https://youtube.com/playlist?list=PLX8Rsrpnn3IWPoM7-1YPDksRRkamRY25k)
-
 ## #1
 
 ### Reactとは
