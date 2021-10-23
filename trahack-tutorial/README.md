@@ -24,7 +24,13 @@
 npx create-react-app trahack-tutorial
 ```
 
-npxを使う理由 ... npmの場合、事前にpackage.jsonにscriptsを記載しておく必要があるが、npxを使用すれば、自動的に必要なスクリプトを探してくれ、実行できる。  
+npxを使う理由 ... 
+- npmの場合、事前にpackage.jsonにscriptsを記載しておく必要があるが、npxを使用すれば、自動的に必要なスクリプトを探してくれ、実行できる。  
+- 本来インストールしなければ使用できないパッケージをwebを介して使用できる
+  ```bash
+  # ↓は本来npm install -g npm-check-updatesでインストールする必要あり
+  npx npm-check-updates
+  ```
 
 以下はpackage.jsonが無い場合の実行ログ  
 ```bash
