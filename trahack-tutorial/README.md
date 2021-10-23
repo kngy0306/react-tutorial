@@ -38,13 +38,6 @@ React.createElement(
 )
 ```
 
-## #3 create-react-appで環境構築
-
-### create-react-appとは
-
-簡単にReactの開発環境を構築できるツールチェイン。  
-本来の環境構築では、**トランスパイラのBabel**、**バンドラーのWebpack**などを設定する必要があるが、それらを担ってくれる。今後自分で設定できる必要あり。  
-
 ### React.Fragment
 
 JSXは階層構造でreturnしなければいけないが、HTMLタグを使いたくないときのために、`React.Fragment`が使用できる。`<>`として省略可。
@@ -62,6 +55,13 @@ return (
   </>
 )
 ```
+
+## #3 create-react-appで環境構築
+
+### create-react-appとは
+
+簡単にReactの開発環境を構築できるツールチェイン。  
+本来の環境構築では、**トランスパイラのBabel**、**バンドラーのWebpack**などを設定する必要があるが、それらを担ってくれる。今後自分で設定できる必要あり。  
 
 ### CRAに必要なもの
 
@@ -131,4 +131,37 @@ package.jsonのscriptsに記載されている。
 yarn start
 ```
 
-## #4
+## #4 コンポーネントとprops
+
+### コンポーネントを使用する理由
+
+- 再利用するため
+- 変更しやすくするため
+- 可読性の向上
+
+### propsで値の受け渡し
+
+```js
+// App.js
+import Article from './components/Article';
+
+function App () => {
+  const title = "サンプル!";
+  return (
+    <>
+      <Article title={title} />
+    </>
+  );
+}
+
+export default App;
+
+// components/Article.js
+export const Article = (props) => {
+  return (
+    <div>
+      <h2>{props.title}</h2>
+    </div>
+  );
+}
+```
