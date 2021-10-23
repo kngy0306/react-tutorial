@@ -20,6 +20,24 @@ Reactで仮想DOMを作成し、差分のみのDOMを再描画する。実際の
 
 ## #2
 
+### JSXとは
+
+テンプレート言語。最終的にReact要素を生成する。  
+
+コンパイル時にReact.createElementに変換する
+
+```js
+<button className={'btn-blue'}>
+  Click
+</button>
+↓
+React.createElement(
+  'button',
+  {className: 'btn-blue'},
+  'Click',
+)
+```
+
 ## #3 create-react-appで環境構築
 
 ### create-react-appとは
@@ -27,7 +45,25 @@ Reactで仮想DOMを作成し、差分のみのDOMを再描画する。実際の
 簡単にReactの開発環境を構築できるツールチェイン。  
 本来の環境構築では、**トランスパイラのBabel**、**バンドラーのWebpack**などを設定する必要があるが、それらを担ってくれる。今後自分で設定できる必要あり。  
 
-### craに必要なもの
+### React.Fragment
+
+JSXは階層構造でreturnしなければいけないが、HTMLタグを使いたくないときのために、`React.Fragment`が使用できる。`<>`として省略可。
+
+```js
+return (
+  <React.Fragment>
+    <p>some text</p>
+  </React.Fragment>
+)
+↓ 
+return (
+  <>
+    <p>some text</p>
+  </>
+)
+```
+
+### CRAに必要なもの
 
 - Node.js: >=10.16
 - npm: >=5.6
