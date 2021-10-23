@@ -1,4 +1,4 @@
-import { Article } from "./components/Article";
+import A from "./components/Article";
 
 function App() {
   const firstTitle = "最初のタイトル！";
@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-      <Article title={firstTitle} />
-      <Article title={kona} />
+      <A title={firstTitle} />
+      <A title={kona} />
     </>
   );
 }
