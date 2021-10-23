@@ -242,3 +242,35 @@ import Content from './components/Content';
 import {Content, Article, Title} from './components/index';
 ```
 
+## #6 コンポーネントの状態管理
+
+### stateを使う理由
+
+stateを使用して値を変更すれば、仮想DOMの差分だけが更新されて再描画される。  
+Reactがコンポーネントを再描画するきっかけは、
+- stateが変更された時
+- propsが変更されたとき
+
+### useState
+
+```js
+// state は現在の状態
+// setState は状態を更新するための関数
+const [state, setState] = useState("初期値");
+```
+
+### propsへ関数を渡すときは関数を実行しないように気をつける
+
+コンポーネントヘ値を渡す時にレンダリングするけどそのときに関数を実行してしまっているので、無限ループしてしまう。
+
+```js
+// OK
+<Article onClick={()=>someFunc()} />
+<Article onClick={someFunc} />
+
+// NG
+<Article onClick={someFunc()}>
+```
+
+## #7
+
