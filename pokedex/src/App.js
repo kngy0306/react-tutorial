@@ -1,8 +1,11 @@
+import { Pokemon, CommentList } from "./components/index";
 
 function App() {
+  
   return (
     <div className="App">
-      hello world
+      <h1>コメント</h1>
+      <CommentList />
     </div>
   );
 }
