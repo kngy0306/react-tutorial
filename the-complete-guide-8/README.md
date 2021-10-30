@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+<img width="709" alt="スクリーンショット 2021-10-30 17 25 58" src="https://user-images.githubusercontent.com/57553474/139526047-0eeb4943-c183-4d8b-8097-72baa927106f.png">
+<img width="734" alt="スクリーンショット 2021-10-30 17 26 04" src="https://user-images.githubusercontent.com/57553474/139526049-1bd92ed3-169b-406d-bbaf-b62c74a9aff1.png">
+
+* Modalを用いたエラー表示
+* useStateを用いた状態管理
+* css modeulsを用いたスタイル
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
