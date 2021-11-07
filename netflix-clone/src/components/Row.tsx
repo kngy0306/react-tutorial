@@ -21,6 +21,7 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
   const baseURL = "https://api.themoviedb.org/3";
   const imgBaseUrl = "https://image.tmdb.org/t/p/original";
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [trailerUrl, setTrailerUrl] = useState<string | null>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,8 +31,6 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
     };
     fetchData();
   }, [fetchUrl]);
-
-  console.log(movies);
 
   return (
     <div className="Row">

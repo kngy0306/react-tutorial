@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+## 使用ライブラリ
+- [axios](https://www.npmjs.com/package/axios)
+- [scss](https://www.npmjs.com/package/scss)
+- [movie-trailer](https://www.npmjs.com/package/movie-trailer)
+- [react-youtube](https://www.npmjs.com/package/react-youtube)
+
+## その他使用サイト
+- [Postman](https://www.postman.com/)
+- [TMDB](https://www.themoviedb.org/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
